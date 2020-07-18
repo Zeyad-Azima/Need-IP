@@ -33,7 +33,7 @@ def Censys(Search):
         soup = BeautifulSoup(result,'lxml')
         azi = soup.find_all('span',{'class':'dns'})
         for i in azi:
-            print(stylize(i.get('id'),colored.fg('green')))
+            print(stylize(i.get('id'),colored.fg('red')))
 
 
 def Shodan(Search):
@@ -42,18 +42,19 @@ def Shodan(Search):
     try:
         results = api.search(Search)
         for result in results['matches']:
-            print(stylize(result['ip_str'],colored.fg('green')))
+            print(stylize(result['ip_str'],colored.fg('red')))
     except shodan.APIError as e:
         print('Error: {}'.format(e))
 
 def ZoomEye(Search):
     pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0',
-              'Accept': 'application/json, text/plain, */*',
-              'Cube-Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IjEyNjcxNzc3ODg4Njk2ODUyNDgiLCJlbWFpbCI6Ik5vbmUiLCJleHAiOjE1OTUwMzI0NDIuMH0.kRNbJjWoSiVIjgVgFZzzHTww3eYYmsHLNDALkmBDoWk'}
+          'Accept': 'application/json, text/plain, */*',
+          'Cube-Authorization': ''}
     cookies = {'__cdnuid_s': '4ac1995ba3c870f5ddeb699fde659f70',
-               'Hm_lvt_3c8266fabffc08ed4774a252adcb9263': '1594777869,1594832173,1594935867,1594937361',
-               '__cdn_clearance': '1594946347.861|0|q6NShIeo3nf%2BRRiGC1hGHbvNDR8%3D'}
+           'Hm_lvt_3c8266fabffc08ed4774a252adcb9263': '1594777869,1594832173,1594935867,1594937361',
+           '__cdn_clearance': '1595030413.613|0|7dlsp1KyQ66MYJ3g2O%2BVjMCSelU%3D','Hm_lpvt_3c8266fabffc08ed4774a252adcb9263':'1595030073'}
+
     for p in pages:
         r = requests.get(f'https://www.zoomeye.org/search?q={Search}&p={p}', headers=header, cookies=cookies, verify=True)
         res = r.text
