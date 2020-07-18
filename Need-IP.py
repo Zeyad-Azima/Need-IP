@@ -1,3 +1,8 @@
+#Author:    Zeyad Azima "Cyber-Atom"
+#Github:    https://github.com/Cyber-Atom
+#Facebook:  https://www.facebook.com/elkingzeyad.azeem
+#Website:   https://cyberatom.org/
+
 import requests,json,colored,time,shodan
 from optparse import *
 from colored import stylize
