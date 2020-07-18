@@ -71,7 +71,7 @@ def ZoomEye(Search):
             azima = json.load(lst)
 
             for ip in azima['matches']:
-                print(stylize(ip['ip'], colored.fg('red)))
+                print(stylize(ip['ip'], colored.fg('red')))
 
 print(stylize(logo,colored.fg('red')))
 
