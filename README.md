@@ -1,2 +1,2 @@
-# Need-IP [use it for ethical hacking & penetration testing]
+# Need-IP [tool for ethical hacking & penetration testing]
 IP Collector Tool
