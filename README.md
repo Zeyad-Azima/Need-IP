@@ -1,5 +1,5 @@
 # Need-IP [tool for ethical hacking & penetration testing]
-IP Collector Tool for ethical hacking & penetration testing with a lot of results
+A tool for Pentesters & BugHunters to collect IPs of company, server, Operating System & many more 
 
 # Supported OS:
 ```
