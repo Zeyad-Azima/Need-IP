@@ -1,7 +1,7 @@
-#Author:    Zeyad Azima "zWIZARDz"
+#Author:    Zeyad Azima
 #Github:    https://github.com/Zeyad-Azima
-#Facebook:  https://www.facebook.com/elkingzeyad.azeem
-#Website:   https://cyberatom.org/
+#Linkedin:  https://www.linkedin.com/in/zer0verflow/
+#Website:   https://zer0verflow.blogspot.com/
 
 import requests,json,colored,time,shodan
 from optparse import *
@@ -17,11 +17,12 @@ logo = """
 ██║ ╚████║███████╗███████╗██████╔╝      ██║██║     
 ╚═╝  ╚═══╝╚══════╝╚══════╝╚═════╝       ╚═╝╚═╝     
                                                    
-                    @ZeyadAzima
+    https://www.linkedin.com/in/zer0verflow/
+                @Zeyad-Azima
 """
 def Start():
     choose = OptionParser()
-    choose.add_option("-s","--search",dest="search",help="Version or device you want to search for")
+    choose.add_option("-s","--search",dest="search",help="Product or OS or Device, etc you want to search for")
     return choose.parse_args()
 
 
@@ -81,11 +82,8 @@ print(stylize(logo,colored.fg('red')))
 try:
     print(stylize(f"""[+] Search for: {options.search}\n[+] Searching in Shodan...\n[+] Searching in Censys.....\n[+] Searching in Zoomeye.......""",colored.fg('red')))
     print(stylize("--------------------------------------------------------------------",colored.fg("red")))
-    time.sleep(10)
     Censys(options.search)
-    time.sleep(5)
     Shodan(options.search)
-    time.sleep(5)
     ZoomEye(options.search)
     print(stylize("--------------------------------------------------------------------", colored.fg("red")))
     print(stylize("[+] Search Done",colored.fg('red')))
