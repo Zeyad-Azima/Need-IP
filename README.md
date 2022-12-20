@@ -10,7 +10,7 @@ Android
 
 # Install:
 ```
-$ git clone https://github.com/Cyber-Atom/Need-IP
+$ git clone https://github.com/Zeyad-Azima/Need-IP
 $ pip3 install -r requirements.txt
 ```
 
